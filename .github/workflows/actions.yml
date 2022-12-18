@@ -2,7 +2,7 @@ name: run main.py
 
 on:
   schedule:
-    - cron: '30 15 * * *' # At 00:00 on Monday
+    - cron: '15 15 * * *' # At 00:00 on Monday
 
 jobs:
   build:
@@ -15,7 +15,14 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.11' # install the python version needed
-
+      - name: Installed package list
+        run: apt list --installed
+      - name: Remove Chrome
+        run: sudo apt purge google-chrome-stable
+      - name: Remove default Chromium
+        run: sudo apt purge chromium-browser
+      - name: Install a new Chromium
+        run: sudo apt install -y chromium-browser
       - name: install python packages
         run: |
           python -m pip install --upgrade pip
