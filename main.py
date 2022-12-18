@@ -68,7 +68,7 @@ def get_outage_data(driver, web):
         time += powercut.find_element(By.TAG_NAME, "span").text
         time += "\n"
         schedule.append(time)
-    logging.basicConfig(filename="myapp.log", level=logging.INFO)
+    logging.basicConfig(filename="log.log", level=logging.INFO)
     if date and schedule:
         logging.info(f"date: {date} schedule: {schedule}")
         return date, schedule
