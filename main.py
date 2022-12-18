@@ -80,7 +80,6 @@ def get_outage_data(driver, web):
 def draft_messege_text(date, schedule):
     times = "".join(schedule)
     messege = f"*CEB powercuts: {date}* ⚠\n\n{times}\n_Data source: cebcare.ceb.lk_"
-    print(messege)
     return messege
 
 
@@ -100,9 +99,7 @@ def send_messege(messege):
         "text": {"preview_url": False, "body": messege},
     }
 
-    x = requests.post(url, headers=headers, json=myobj)
-
-    print(x.text)
+    result = requests.post(url, headers=headers, json=myobj)
 
 
 def main():
