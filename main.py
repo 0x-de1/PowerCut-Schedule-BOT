@@ -79,7 +79,7 @@ def get_outage_data(driver, web):
 
 def draft_messege_text(date, schedule):
     times = "".join(schedule)
-    messege = f"*CEB powercuts: {date}* ⚠\n\n{times}\n_Data source: cebcare.ceb.lk_"
+    messege = f"*CEB powercuts: {date}* ⚠\n\n{times}\n_Data source: cebcare.ceb.lk/Incognito/OutageMap_"
     return messege
 
 
