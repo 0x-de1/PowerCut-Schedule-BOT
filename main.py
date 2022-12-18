@@ -10,6 +10,8 @@ from selenium.webdriver.common.by import By
 
 import requests
 import os
+import logging
+import sys
 
 WEB = "https://cebcare.ceb.lk/Incognito/OutageMap"
 CEB_ACCOUNT = "4290195113"
@@ -66,7 +68,13 @@ def get_outage_data(driver, web):
         time += powercut.find_element(By.TAG_NAME, "span").text
         time += "\n"
         schedule.append(time)
-    return date, schedule
+    logging.basicConfig(filename="myapp.log", level=logging.INFO)
+    if date and schedule:
+        logging.info(f"date: {date} schedule: {schedule}")
+        return date, schedule
+    else:
+        logging.error(f"date: {date} schedule: {schedule}")
+        sys.exit()
 
 
 def draft_messege_text(date, schedule):
