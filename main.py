@@ -3,8 +3,7 @@ from webdriver_manager.core.utils import ChromeType
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
 
 
@@ -35,9 +34,7 @@ def start_webdriver():
         options.add_argument(argument)
 
     # Creating the driver
-    chromium_service = Service(
-        ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()
-    )
+    chromium_service = ChromeService(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=chromium_service, options=options)
     driver.implicitly_wait(10)  # seconds
     return driver
