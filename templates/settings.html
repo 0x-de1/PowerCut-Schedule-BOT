@@ -1,0 +1,195 @@
+{% extends "layout.html" %} {% block title %} Settings {% endblock %} {% block
+main %}
+
+<div class="container border-5 shadow bg-body bg-warning">
+  <form action="/settings" method="post">
+    <div class="display-6 p-5">Edit user data</div>
+    <hr class="m-3" />
+
+    <div>
+      <div class="row justify-content-around p-3 m-auto">
+        <h5 class="col-6 m-auto">Email</h5>
+        <div class="col">
+          <div class="d-flex justify-content-center m-auto">
+            <input
+              type="text"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="{{email}}"
+              disabled
+              required
+            />
+          </div>
+        </div>
+        <div class="col-2 m-auto">
+          <img
+            class="btn btn-outline-secondary"
+            src="static\pencil-square.svg"
+            alt="edit button"
+            onclick="edit(this)"
+          />
+        </div>
+      </div>
+      <div class="row justify-content-around p-3 m-auto">
+        <h5 class="col-6 m-auto">Whatsapp number</h5>
+        <div class="col">
+          <div class="d-flex justify-content-center m-auto">
+            <input
+              type="text"
+              class="form-control"
+              id="phone"
+              name="phone"
+              pattern="^\+\d+$"
+              placeholder="+{{phone}}"
+              disabled
+              required
+            />
+          </div>
+        </div>
+        <div class="col-2 m-auto">
+          <img
+            class="btn btn-outline-secondary"
+            src="static\pencil-square.svg"
+            alt="edit button"
+            onclick="edit(this)"
+          />
+        </div>
+      </div>
+      <div class="row justify-content-around p-3 m-auto">
+        <h5 class="col-6 m-auto">CEB acount</h5>
+        <div class="col">
+          <div class="d-flex justify-content-center m-auto">
+            <input
+              type="text"
+              class="form-control"
+              id="CEB account (10 digits) "
+              name="ceb_account"
+              placeholder="{{ceb}}"
+              pattern="^\d{10}$"
+              disabled
+              required
+            />
+          </div>
+        </div>
+        <div class="col-2 m-auto">
+          <img
+            class="btn btn-outline-secondary"
+            src="static\pencil-square.svg"
+            alt="edit button"
+            onclick="edit(this)"
+          />
+        </div>
+      </div>
+      <div class="row justify-content-around p-3 m-auto">
+        <h5 class="col-6 m-auto">Password</h5>
+        <div class="col">
+          <div class="d-flex justify-content-center m-auto">
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              placeholder="New password"
+              disabled
+              required
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="d-flex justify-content-center m-auto">
+            <input
+              type="password"
+              class="form-control"
+              name="confirmation"
+              id="password"
+              placeholder="Confirm password"
+              disabled
+              required
+            />
+          </div>
+        </div>
+        <div class="col-2 m-auto">
+          <img
+            class="btn btn-outline-secondary"
+            src="static\pencil-square.svg"
+            alt="edit button"
+            onclick="edit(this)"
+          />
+        </div>
+      </div>
+    </div>
+    <hr class="m-3" />
+    <div class="d-none" id="Edited_fields">
+      <div class="checkbox">
+        <label
+          ><input
+            type="checkbox"
+            name="edited"
+            value="email"
+            id="email"
+          />1</label
+        >
+      </div>
+      <div class="checkbox">
+        <label
+          ><input
+            type="checkbox"
+            name="edited"
+            value="phone"
+            id="phone"
+          />2</label
+        >
+      </div>
+      <div class="checkbox">
+        <label
+          ><input
+            type="checkbox"
+            name="edited"
+            value="ceb_account"
+            id="ceb_account"
+          />3</label
+        >
+      </div>
+      <div class="checkbox">
+        <label
+          ><input
+            type="checkbox"
+            name="edited"
+            value="password"
+            id="password"
+          />4</label
+        >
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary px-5 mx-lg-5 m-5">
+      Save changes
+    </button>
+    <a href="/" type="button" class="btn btn-danger px-5 mx-lg-5 m-5">
+      Discard changes
+    </a>
+  </form>
+</div>
+
+<script>
+  function edit(element) {
+    const textFields =
+      element.parentNode.parentNode.getElementsByTagName('input');
+    //
+
+    let i = 0;
+    while (i < textFields.length) {
+      textFields[i].disabled = false;
+      textFields[i].placeholder = 'New ' + textFields[i].id;
+      i++;
+    }
+    const checkbox = document
+      .getElementById('Edited_fields')
+      .querySelector('#' + textFields[0].name);
+
+    //Record edited field
+
+    checkbox.checked = true;
+  }
+</script>
+{% endblock %}

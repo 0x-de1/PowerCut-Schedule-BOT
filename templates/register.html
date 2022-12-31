@@ -1,0 +1,220 @@
+{% extends "layout.html" %} {% block title %} Register {% endblock %} {% block
+main %}
+<div class="d-flex flex-wrap flex-lg-nowrap justify-content-center m-lg-5">
+  <div class="details my-auto ms-lg-auto py-5">
+    <h2 class="display-3">
+      <span class="navtitle fw-bold">PowerCut-Schedule</span>
+      <span>BOT</span>⚡
+    </h2>
+  </div>
+
+  <div
+    class="container border-5 shadow-lg bg-body ms-lg-5 p-3 signup bg-warning"
+  >
+    <h4 class="display-6 p-3">Register</h4>
+
+    <form action="/register" method="post">
+      <div class="form-floating mb-2 mx-5">
+        <input
+          autocomplete="on"
+          required
+          class="form-control {% if field_answers['invalid_phone'] %} is-invalid {% endif %}"
+          id="phone"
+          name="phone"
+          pattern="^\+\d+$"
+          type="tel"
+          placeholder="phone +94xxxxxxxxx"
+        />
+        <label for="phone" class="form-label"
+          >Whatsapp number (+94xxxxxxxxx)</label
+        >
+        {% if field_answers['invalid_phone'] %}
+        <div id="validationServerUsernameFeedback" class="invalid-feedback">
+          Whatsapp number already exists.
+        </div>
+        {% endif %}
+      </div>
+      <div class="form-floating mb-2 mx-5">
+        <input
+          autocomplete="on"
+          required
+          class="form-control {% if field_answers['invalid_ceb'] %} is-invalid {% endif %}"
+          id="ceb"
+          name="ceb_account"
+          pattern="^\d{10}$"
+          type="text"
+          placeholder="CEB account No"
+        />
+        <label for="ceb" class="form-label"
+          >CEB account number (10 digits)</label
+        >
+        {% if field_answers['invalid_ceb'] %}
+        <div id="validationServerUsernameFeedback" class="invalid-feedback">
+          CEB account number is invalid.
+        </div>
+        {% endif %}
+      </div>
+      <div class="form-floating mb-2 mx-5">
+        <input
+          autocomplete="on"
+          required
+          class="form-control {% if field_answers['invalid_email'] %} is-invalid {% endif %}"
+          id="email"
+          name="email"
+          type="email"
+          placeholder="Email"
+        />
+        <label for="email" class="form-label">Email</label>
+        {% if field_answers['invalid_email'] %}
+        <div id="validationServerUsernameFeedback" class="invalid-feedback">
+          Email already exists.
+        </div>
+
+        {% endif %}
+      </div>
+      <div class="form-floating mb-2 mx-5">
+        <input
+          autocomplete="on"
+          required
+          class="form-control {% if field_answers['invalid_password'] %} is-invalid {% endif %}"
+          id="password"
+          name="password"
+          type="password"
+          placeholder="password"
+        />
+        <label for="password" class="form-label">Password</label>
+        {% if field_answers['invalid_password'] %}
+        <h6 class="warning">Passwords did not match</h6>
+        {% endif %}
+      </div>
+      <div class="form-floating mx-5">
+        <input
+          autocomplete="on"
+          required
+          class="form-control {% if field_answers['invalid_confirmation'] %} is-invalid {% endif %}"
+          id="confirmation"
+          name="confirmation"
+          type="password"
+          placeholder="confirmation"
+        />
+        <label for="confirmation" class="form-label">Confirm password</label>
+        {% if field_answers['invalid_confirmation'] %}
+        <h6 class="warning">Passwords did not match</h6>
+        {% endif %}
+      </div>
+
+      <button type="submit" id="submit" class="btn mt-4 mx-5 btn-primary w-75">
+        Register
+      </button>
+    </form>
+    <hr class="mx-5" />
+
+    <form action="/login" method="get">
+      <p>Already have an account?</p>
+      <button
+        type="submit"
+        id="submit"
+        class="btn mx-5 mb-4 p-2 btn btn-success w-75"
+      >
+        Log In
+      </button>
+    </form>
+  </div>
+</div>
+<div class="m-5"></div>
+<div
+  class="container bg-light justify-content-center m-auto shadow p-5 align-content-start text-start fs-5"
+>
+  <h1 class="text-center pb-4">What is PowerCut Schedule Bot?</h1>
+  <p>
+    These days for Sri Lankans, power cuts are part of everyday life. However,
+    power cut schedule can vary from day to day depending on the demand
+    management planned by the Ceylon Electricity Board (CEB).
+  </p>
+  <p>
+    PowerCut Schedule Bot is a free web service that will notify you about the
+    power cut times for each day via a WhatsApp messege.
+  </p>
+  <p>
+    Every day, we will automatically collect power cut data from
+    <a href="https://cebcare.ceb.lk/">Ceylon Electricity Board (CEB)</a> data
+    sources for each user and send a WhatsApp messege with the power cut
+    schedule to you via the
+    <a
+      href="https://developers.facebook.com/docs/graph-api/reference/whats-app-business-hsm/"
+      >WhatsApp Graph API.</a
+    >
+  </p>
+</div>
+<div class="m-5"></div>
+<div
+  class="container bg-light justify-content-center m-auto shadow p-5 align-content-start text-start fs-5"
+>
+  <h1 class="text-center pb-4">Disclaimer</h1>
+  <div>
+    Power cut data served through the service is based on official data provided
+    by the CEB. In some instances, we have noticed actual power cut times
+    varying from the official schedule.
+  </div>
+</div>
+<div class="m-5"></div>
+<div
+  class="container bg-light justify-content-center m-auto shadow p-5 align-content-start text-start fs-5"
+>
+  <h1 class="text-center pb-4">Registering for the service</h1>
+  <p>
+    Load the web app and click
+    <span class="badge bg-success">Create new account</span> button. Now you
+    will be redirected to the register page.
+  </p>
+  <ul>
+    <li>
+      Enter your WhatsApp number, CEB account number, email and password to the
+      relevant fields and click Register.
+    </li>
+    <li>
+      If you provided valid information your account will be created & you will
+      be redirected to the Login page.
+    </li>
+  </ul>
+</div>
+<div class="m-5"></div>
+<div
+  class="container bg-light justify-content-center m-auto shadow p-5 align-content-start text-start fs-5"
+>
+  <h1 class="text-center pb-4">Viewing account details</h1>
+  <div>
+    <ul>
+      <li>
+        You can login to your account with previously provided email and
+        password.
+      </li>
+      <li>
+        After login you can view your WhatsApp number, CEB account email in the
+        dashboard.
+      </li>
+    </ul>
+  </div>
+  <h1 class="text-center pb-4">Editing account details</h1>
+  <div>
+    Click <span class="badge bg-primary">Edit user data</span>button on the home
+    page to go to the Edit user data page.
+    <ul>
+      <li>
+        Click on the edit icon in front of WhatsApp number, CEB account, email
+        and password to enter new values.
+      </li>
+      <li>
+        If you want to discard changes click on the
+        <span class="badge bg-danger">Discard changes</span> button.
+      </li>
+      <li>
+        After entering the new values click on
+        <span class="badge bg-primary">Save changes</span> button to change the
+        data.
+      </li>
+    </ul>
+  </div>
+</div>
+<script></script>
+{% endblock %}

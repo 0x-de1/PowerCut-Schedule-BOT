@@ -1,0 +1,48 @@
+{% extends "layout.html" %} {% block title %} Home {% endblock %} {% block main
+%}
+<div class="container border-5 shadow bg-body bg-warning w-75">
+  <form action="/settings" method="get">
+    <div class="display-6 p-5">Dashboard</div>
+    <hr class="mx-5" />
+    <div>
+      <div class="d-flex justify-content-between p-3 row">
+        <h5 class="col-4">Email</h5>
+        <span class="col">{{email}}</span>
+      </div>
+      <div class="d-flex justify-content-between p-3">
+        <h5 class="col-4">Whatsapp number</h5>
+        <span class="col">{{phone}}</span>
+      </div>
+      <div class="d-flex justify-content-between p-3">
+        <h5 class="col-4">CEB accounts</h5>
+        <span class="col">{{ceb}}</span>
+      </div>
+    </div>
+    <hr class="mx-5" />
+    <div class="">
+      <button type="submit" class="btn btn-primary w-25 m-3">
+        Edit user data
+      </button>
+    </div>
+  </form>
+</div>
+
+<script>
+  async function getRequest(url = '') {
+    const response = await fetch(url, {
+      method: 'GET',
+      cache: 'no-cache',
+    });
+    return response.json();
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    let url = document.location;
+    let route = '/flaskwebgui-keep-server-alive';
+    let interval_request = 3 * 1000; //sec
+    function keep_alive_server() {
+      getRequest(url + route).then((data) => console.log(data));
+    }
+    setInterval(keep_alive_server, interval_request)();
+  });
+</script>
+{% endblock %}
