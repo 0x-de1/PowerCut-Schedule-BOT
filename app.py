@@ -19,7 +19,8 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Configure CS50 Library to use SQLite database
-db = SQL("sqlite:///powercut_bot.db")
+database = os.environ.get("database")
+db = SQL(database)
 
 
 @app.after_request
