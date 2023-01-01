@@ -158,7 +158,7 @@ def send_messege(messege_object):
 def main():
     # check API keys
 
-    if not os.environ.get("whatsapp_access_token") or os.environ.get(
+    if not os.environ.get("whatsapp_access_token") or not os.environ.get(
         "whatsapp_phone_id"
     ):
         raise RuntimeError("API_KEY not set")
