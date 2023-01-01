@@ -5,3 +5,4 @@ requests
 phonenumbers
 Flask-Session
 mysqlclient
+gunicorn
