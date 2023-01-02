@@ -208,7 +208,7 @@ def settings():
         # Update all new fields
         for item in inputs.keys():
             db.execute(
-                f"UPDATE users SET ? = ? WHERE id = ?",
+                "UPDATE users SET ? = ? WHERE id = ?",
                 item,
                 inputs[item],
                 session["user_id"],

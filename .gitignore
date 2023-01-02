@@ -10,7 +10,7 @@ __pycache__/
 test.py
 test.html
 test.ipynb
-flask
+flask_sesson/
 
 # Distribution / packaging
 .Python
