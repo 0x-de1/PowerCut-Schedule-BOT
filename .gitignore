@@ -10,8 +10,8 @@ __pycache__/
 test.py
 test.html
 test.ipynb
-flask_sesson/
-
+flask_session/
+*.db
 # Distribution / packaging
 .Python
 build/

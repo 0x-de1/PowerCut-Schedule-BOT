@@ -19,7 +19,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Configure CS50 Library to use SQLite database
-database = os.environ.get("database")
+database = os.environ.get("powercut_bot_database")
 db = SQL(database)
 
 
@@ -208,8 +208,7 @@ def settings():
         # Update all new fields
         for item in inputs.keys():
             db.execute(
-                "UPDATE users SET ? = ? WHERE id = ?",
-                item,
+                f"UPDATE users SET {item} = ? WHERE id = ?",
                 inputs[item],
                 session["user_id"],
             )
