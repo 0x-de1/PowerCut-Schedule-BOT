@@ -1,3 +1,10 @@
+# testing files
+test.py
+test.html
+test.ipynb
+flask_session/
+*.db
+main.py
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -6,12 +13,6 @@ __pycache__/
 # C extensions
 *.so
 
-# testing files
-test.py
-test.html
-test.ipynb
-flask_session/
-*.db
 # Distribution / packaging
 .Python
 build/
