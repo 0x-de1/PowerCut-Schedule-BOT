@@ -5,6 +5,7 @@
 https://www.youtube.com/watch?v=ykFOfWuAl4Q
 
 ## Description
+![Powercut-Schedule BOT](static/title.jpg "Powercut-Schedule BOT")
 
 These days for Sri Lankans, power cuts are part of everyday life. However,
 power cut schedule can vary from day to day depending on the demand
@@ -15,6 +16,8 @@ management planned by the Ceylon Electricity Board (CEB).
 Every day, we will automatically collect power cut data from [Ceylon Electricity Board (CEB)](https://cebcare.ceb.lk/) data
 sources for each user and send a WhatsApp message with the power cut
 schedule to you via the [WhatsApp Graph API](https://developers.facebook.com/docs/graph-api/reference/whats-app-business-hsm/).
+
+![whatsapp](static/WhatsApp.jpg "whatsapp" )
 
 # Installation:
 
@@ -32,12 +35,14 @@ Load the web app and click <kbd>Create new account</kbd> button. Now you will be
 
 - If you provided valid information your account will be created & you will be redirected to the Login page.
 
+![register](static/register.jpg "Registration page")
+
 ## Viewing account details
 
 You can login to your account with previously provided email and password.
 
 - After login you can view your WhatsApp number, CEB acccount email in the dashboard.
-
+![dashboard](static/dashboard.jpg "dashboard")
 ## Editing account details
 
 Click <kbd>Edit user data</kbd> button on the home page to go to the Edit user data page.
@@ -45,7 +50,7 @@ Click <kbd>Edit user data</kbd> button on the home page to go to the Edit user d
 - Click on the edit icon infront of WhatsApp number, CEB acccount, email and password to enter new values.
 - If you want to discard changes click on the <kbd>Discard changes</kbd> button.
 - After entering the new values click on <kbd>Save changes</kbd> button to change the data.
-
+![editing](static/editing.jpg "editing")
 ## Project Files/Folders:
 
 ---

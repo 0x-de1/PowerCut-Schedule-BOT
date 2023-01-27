@@ -183,11 +183,16 @@ def settings():
                         "Insert a valid phone number with '+ country code'. eg: +94 333 542 432",
                         400,
                     )
-                phone_exists = db.execute(
-                    "SELECT * FROM users WHERE ? = ? ", item, input
+                print(
+                    type(input),
+                    type(item),
+                    f"SELECT * FROM users WHERE {item} = {input}",
                 )
+
+                phone_exists = db.execute("SELECT * FROM users WHERE phone = ?", input)
+                print(phone_exists)
                 if phone_exists:
-                    return error_messege(f"Entered {item} already exists", 400)
+                    return error_messege(f"Entered phone number already exists", 400)
 
             elif item == "password":
                 confirmation = request.form.get("confirmation")
@@ -199,9 +204,7 @@ def settings():
                 input = generate_password_hash(input)
 
             elif item == "email":
-                input_exists = db.execute(
-                    "SELECT * FROM users WHERE ? = ? ", item, input
-                )
+                input_exists = db.execute("SELECT * FROM users WHERE email = ?", input)
                 if input_exists:
                     return error_messege(
                         f"Entered email already exists. Enter another email", 400
