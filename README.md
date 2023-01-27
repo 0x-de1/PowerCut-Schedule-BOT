@@ -48,7 +48,7 @@ Click <kbd>Edit user data</kbd> button on the home page to go to the Edit user d
 ![editing](static/editing.jpg "editing")
 ## Project Files/Folders:
 
----
+
 
 <kbd>static</kbd>: Contains CSS, and images required for the flask web app
 
