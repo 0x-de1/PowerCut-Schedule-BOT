@@ -180,6 +180,7 @@ main %}
     let i = 0;
     while (i < textFields.length) {
       textFields[i].disabled = false;
+      textFields[i].placeholder = 'New ' + textFields[i].id;
       i++;
     }
     const checkbox = document

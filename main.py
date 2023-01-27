@@ -156,13 +156,6 @@ def send_messege(messege_object):
 
 
 def main():
-    # check API keys
-
-    if not os.environ.get("whatsapp_access_token") or not os.environ.get(
-        "whatsapp_phone_id"
-    ):
-        raise RuntimeError("API_KEY not set")
-
     # Configure CS50 Library to use SQLite database
     db = SQL("sqlite:///powercut_bot.db")
     # Select all unique accounts from db
