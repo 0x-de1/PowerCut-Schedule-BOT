@@ -1,15 +1,12 @@
 # PowerCut-Schedule BOT
+![Powercut-Schedule BOT](static/title.jpg "Powercut-Schedule BOT")
 
 ## Video Demo:
-
 https://www.youtube.com/watch?v=ykFOfWuAl4Q
 
 ## Description
-![Powercut-Schedule BOT](static/title.jpg "Powercut-Schedule BOT")
 
-These days for Sri Lankans, power cuts are part of everyday life. However,
-power cut schedule can vary from day to day depending on the demand
-management planned by the Ceylon Electricity Board (CEB).
+### These days for Sri Lankans, power cuts are part of everyday life. However,power cut schedule can vary from day to day depending on the demand management planned by the Ceylon Electricity Board (CEB).
 
 > PowerCut Schedule Bot is a free web service that will notify you about the power cut times for each day via a WhatsApp message.
 
