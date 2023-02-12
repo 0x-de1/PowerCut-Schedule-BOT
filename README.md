@@ -7,7 +7,7 @@
 
 ### These days for Sri Lankans, power cuts are part of everyday life. However,power cut schedule can vary from day to day depending on the demand management planned by the Ceylon Electricity Board (CEB).
 
-> ### PowerCut Schedule Bot is a free web service that will notify you about the power cut times for each day via a WhatsApp message.
+### PowerCut Schedule Bot is a free web service that will notify you about the power cut times for each day via a WhatsApp message.
 
 ### Every day, we will automatically collect power cut data from [Ceylon Electricity Board (CEB)](https://cebcare.ceb.lk/) data sources for each user and send a WhatsApp message with the power cut schedule to you via the [WhatsApp Graph API](https://developers.facebook.com/docs/graph-api/reference/whats-app-business-hsm/).
 
